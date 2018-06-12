@@ -33,6 +33,18 @@ public class Arbol {
             adoquines(n.insertarRama(i+1),--cant);
         }
     }
+    
+    private void adoquinesSinTree(int cant){
+        if(cant==0){
+                this.cant++;
+        }
+        for(int i=0;i<longitud;i++){
+            if( (cant)==0 ){
+                return;
+            }
+            adoquinesSinTree(--cant);
+        }
+    }
     /**
      * Metodo que obtine cantidad caminos tiene el arbol
      * @return caminos
