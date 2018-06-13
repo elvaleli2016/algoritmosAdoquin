@@ -5,7 +5,7 @@
  */
 package adoquines;
 
-import adoquines.arbolEnearios.Arbol;
+import adoquines.lista.Lista;
 
 /**
  *
@@ -18,10 +18,13 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Arbol tree=new Arbol(4);
-        tree.adoquines(8);
-        System.out.println(tree.caminos());
-        tree.imprimirCaminos();
+        AdoquinVariado adoquin=new AdoquinVariado();
+        int n,m;
+        n=30;
+        m=3;
+        adoquin.buscarCaminos(n, m);
+        System.out.println(adoquin.cant);
+        adoquin.imprimirCaminos(n, m, new Lista());
     }
     
 }
