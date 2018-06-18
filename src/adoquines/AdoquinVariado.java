@@ -13,24 +13,23 @@ import adoquines.lista.Lista;
  */
 public class AdoquinVariado {
     
-    public int cant;
     
-    public void buscarCaminos(int n, int m){
-        if(n==0){
-            this.cant++;
-            return;
+    public int  buscarCaminos(int n, int m){
+        if(n<=1){
+            return 1;
         }
         int i=0;
+        int cant=0;
         do{
-            buscarCaminos(--n,m);
+            cant+=buscarCaminos(--n,m);
             i++;
-        }while(i<m&&n!=0);  
+        }while(i<m&&n!=0);
+        return cant;
     }
     
-    public void imprimirCaminos(int n,int m, Lista l){
+     public void imprimirCaminos(int n,int m, Lista l){
         if(n==0){
             l.imprimirLista();  
-            this.cant++;
         }else{
             int i=0;
             do{
@@ -41,4 +40,5 @@ public class AdoquinVariado {
         }
         l.eliminarCola();
     }
+}
 }
