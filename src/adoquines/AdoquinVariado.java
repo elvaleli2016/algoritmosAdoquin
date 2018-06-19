@@ -15,11 +15,8 @@ public class AdoquinVariado {
     
     
     public int  buscarCaminos(int n, int m){
-        if(n<=1){
-            return 1;
-        }
-        int i=0;
-        int cant=0;
+        if(n<=1)return 1;
+        int i=0,cant=0;
         do{
             cant+=buscarCaminos(--n,m);
             i++;
