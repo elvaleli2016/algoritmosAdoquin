@@ -19,12 +19,10 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         AdoquinVariado adoquin=new AdoquinVariado();
-        int n,m,lim;
-        n=10;
-        lim=(n<9)?(n-1):8;
-        m= 2 + (int)(Math.random() * lim);
-        adoquin.buscarCaminos(n, m);
-        System.out.println("n="+n+", m="+m+" Cantidad adoquines="+adoquin.cant);
+        int n,m;
+        n=8;
+        m= 4;
+        System.out.println("n="+n+", m="+m+" Cantidad caminos="+adoquin.buscarCaminos(n, m));
         adoquin.imprimirCaminos(n, m, new Lista());
     }
     

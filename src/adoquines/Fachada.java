@@ -25,9 +25,7 @@ public class Fachada {
     }
     
     public int  buscarCaminos(int n, int m){
-        adoquin.cant=0;
-        adoquin.buscarCaminos(n, m);
-        return adoquin.cant;
+        return adoquin.buscarCaminos(n, m);
     }
     
     public void imprimirCaminos(int n,int m){

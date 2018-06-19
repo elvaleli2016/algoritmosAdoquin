@@ -41,4 +41,4 @@ public class AdoquinVariado {
         l.eliminarCola();
     }
 }
-}
+
