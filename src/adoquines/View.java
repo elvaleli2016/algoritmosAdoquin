@@ -5,6 +5,8 @@
  */
 package adoquines;
 
+import java.util.Date;
+
 /**
  *
  * @author Eliam
@@ -18,7 +20,6 @@ public class View extends javax.swing.JFrame {
     public View() {
         initComponents();
         fac=new Fachada();
-        this.textSaltos.setEnabled(false);
     }
 
     /**
@@ -164,14 +165,15 @@ public class View extends javax.swing.JFrame {
     private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
         try{
             n=Integer.parseInt(this.textCantidad.getText());
-            if(n>2){
-                m=fac.generarPocisiones(n);
-                System.out.println("Cargando... \nNumero de saltos= "+m);
-                this.textSaltos.setText(m+"");
+            m=Integer.parseInt(this.textSaltos.getText());
+            if(n>m&&m<9){
+                Date inicio = new Date();
+                System.out.println("Inicio:"+inicio.toString());
                 this.textCaminos.setText(this.fac.buscarCaminos(n, m)+"");
-                System.out.println("Resultado \n");
+                Date fin = new Date();
+                System.out.println("Resultado diferencia "+(fin.getTime()-inicio.getTime())+" \nFin:"+fin.toString()+" \n");
             }else{
-               this.textSaltos.setText(""); 
+               this.textCaminos.setText("datos invalidos"); 
             }
         }catch(Exception e){
             System.out.println("Debe se numero");

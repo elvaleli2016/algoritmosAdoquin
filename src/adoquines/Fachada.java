@@ -24,7 +24,7 @@ public class Fachada {
         return 2 + (int)(Math.random() * lim);
     }
     
-    public int  buscarCaminos(int n, int m){
+    public double  buscarCaminos(int n, int m){
         return adoquin.buscarCaminos(n, m);
     }
     
