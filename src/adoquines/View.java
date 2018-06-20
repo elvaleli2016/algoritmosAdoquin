@@ -166,12 +166,19 @@ public class View extends javax.swing.JFrame {
         try{
             n=Integer.parseInt(this.textCantidad.getText());
             m=Integer.parseInt(this.textSaltos.getText());
-            if(n>m&&m<9){
+            String mens;
+            if(n>m&&m<10){
                 Date inicio = new Date();
                 System.out.println("Inicio:"+inicio.toString());
                 this.textCaminos.setText(this.fac.buscarCaminos(n, m)+"");
                 Date fin = new Date();
-                System.out.println("Resultado diferencia "+(fin.getTime()-inicio.getTime())+" \nFin:"+fin.toString()+" \n");
+                mens=(fin.getTime()-inicio.getTime())+" milisegundos,";
+                if((fin.getTime()-inicio.getTime())>1000){
+                    mens+=(fin.getTime()-inicio.getTime())/1000+" segundos,";
+                    if((fin.getTime()-inicio.getTime())/1000>60)
+                         mens+=(fin.getTime()-inicio.getTime())/(1000*60)+" minutos";
+                }
+                System.out.println("Resultado diferencia "+mens+" \nFin:"+fin.toString()+" \n");
             }else{
                this.textCaminos.setText("datos invalidos"); 
             }
